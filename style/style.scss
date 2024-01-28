@@ -1,0 +1,97 @@
+@import "./variables.scss";
+
+body {
+  font-family: "Inter", sans;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: $unit-8;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: $unit-4;
+
+  .project-card {
+    box-sizing: border-box;
+    padding: $unit-4;
+    box-shadow:
+      rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+    .screenshot {
+      box-sizing: border-box;
+      background-color: yellow;
+      width: 100%;
+      aspect-ratio: 1/1;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    div {
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .links {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+      }
+
+      .project-description {
+      }
+    }
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: $unit-4;
+
+  @media screen and (max-width: breakpoint(tablet)) {
+    flex-direction: row;
+  }
+
+  .details {
+    display: grid;
+    gap: $unit-4;
+
+    @media screen and (max-width: breakpoint(tablet)) {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: center;
+      gap: $unit-4;
+
+      i.fa {
+        font-size: $unit-8;
+      }
+    }
+  }
+}
